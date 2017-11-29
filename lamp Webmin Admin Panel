@@ -1,0 +1,29 @@
+sudo nano /etc/apt/sources.list 
+
+#add to the line
+
+deb http://download.webmin.com/download/repository sarge contrib
+
+#save and exit
+
+ctrl + X
+
+#Go to tmp folder
+
+cd/tmp
+
+#Download the webmin repository key
+
+wget http://www.webmin.com/jcameron-key.asc
+
+#install the repository key
+sudo apt-key add icameron-key.asc
+
+#update your package list 
+sudo apt update
+
+#install Webmin admin panel
+sudo apt install webmin
+
+To access webmin admin panel 
+http://yourserverip:10000
