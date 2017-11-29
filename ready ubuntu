@@ -1,0 +1,4 @@
+sudo apt update
+sudo apt upgrade
+ip add  #for if config or 
+ifconfig
