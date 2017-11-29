@@ -1,3 +1,4 @@
+#Open and edit the sources file
 sudo nano /etc/apt/sources.list 
 
 #add to the line
@@ -10,7 +11,7 @@ ctrl + X
 
 #Go to tmp folder
 
-cd/tmp
+cd /tmp
 
 #Download the webmin repository key
 
