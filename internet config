@@ -1,0 +1,20 @@
+And create this netplan config file for a static IPV4 address (works for me): /etc/netplan/01-netcfg.yaml .
+ # This file describes the network interfaces available on your system
+ # For more information, see netplan(5).
+ network:
+   version: 2
+   renderer: networkd
+   ethernets:
+     ens3: #network_interface_name
+       dhcp4: no
+       dhcp6: no
+       addresses: [192.168.0.97/24] #ip address/24
+       gateway4: 192.168.0.1
+       nameservers:
+         addresses: [8.8.8.8,8.8.4.4] #dnsserver
+Make sure you use the correct network interface name ("ens3" in this example).
+Make sure you use the correct DNS servers (nameservers->addresses) for your network environment.
+Once this file has been created, run the following commands as root to test & activate the configuration:
+ sudo netplan --debug generate
+ sudo netplan apply
+sudo reboot
